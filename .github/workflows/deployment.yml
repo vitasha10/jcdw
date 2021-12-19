@@ -40,6 +40,22 @@ jobs:
         run: npm i
       - name: Build 🏗️
         run: npm run build
+      - name : container ls $GITHUB_EVENT_PATH
+        with : { entrypoint : "/bin/sh" , args : '-c "ls -la $GITHUB_EVENT_PATH"' }
+        uses : "docker://alpine:latest"
+      - name : container ls $GITHUB_WORKSPACE
+        with : { entrypoint : "/bin/sh" , args : '-c "ls -la $GITHUB_WORKSPACE"' }
+        uses : "docker://alpine:latest"
+      - name : container ls $HOME
+        with : { entrypoint : "/bin/sh" , args : '-c "ls -la $HOME"' }
+        uses : "docker://alpine:latest"
+      - name : machine ls $GITHUB_EVENT_PATH
+        run : "ls -la $GITHUB_EVENT_PATH"
+      - name : machine ls $GITHUB_WORKSPACE
+        run : "ls -la $GITHUB_WORKSPACE"
+      - name : machine ls $HOME
+        working-directory : "."
+        run : "ls -la $HOME"
       - name: Deploy build to vps 🚀
         uses: Creepios/sftp-action@v1.0.3 #wangyucode/sftp-upload-action@v1.1
         with:
@@ -47,5 +63,5 @@ jobs:
           username: '${{ secrets.USERNAME }}'
           password: '${{ secrets.PASSWORD }}'
           remotePath: '${{ secrets.REMOTE_PATH }}'
-          localPath: './dist/'
+          localPath: './build/'
           port: 22
