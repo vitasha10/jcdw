@@ -47,5 +47,5 @@ jobs:
           username: '${{ secrets.USERNAME }}'
           password: '${{ secrets.PASSWORD }}'
           remotePath: '${{ secrets.REMOTE_PATH }}'
-          localPath: './'
+          localPath: './dist/'
           port: 22
