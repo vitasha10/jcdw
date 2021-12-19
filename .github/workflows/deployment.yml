@@ -41,10 +41,13 @@ jobs:
       - name: Build 🏗️
         run: npm run build
       - name: Deploy build to vps 🚀
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
-        with:
-          username: '${{ secrets.USERNAME }}'
-          server: '${{ secrets.SERVER_IP }}'
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: './build/*'
-          remote_path: '${{ secrets.REMOTE_PATH }}'
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        env:
+          FTP_SERVER: ${{ secrets.SERVER_IP }}
+          FTP_USERNAME: ${{ secrets.USERNAME }}
+          FTP_PASSWORD: ${{ secrets.PASSWORD }}
+          LOCAL_DIR: ./build/
+          SERVER_DIR: ${{ secrets.REMOTE_PATH }}
+          METHOD: sftp
+          PORT: 22
+          ARGS: --delete
