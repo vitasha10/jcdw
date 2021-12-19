@@ -1,0 +1,12 @@
+.list{
+    height: auto;
+    width: inherit;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 5vh;
+    padding-top: 2vh;
+}

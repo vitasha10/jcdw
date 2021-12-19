@@ -1,0 +1,36 @@
+.header{
+    background-color: $header-color;
+    .logo{
+        float: left;
+        display: block;
+        height: inherit;
+        width: calc(100% - 7vh);
+        h1{
+            float: left;
+            height: inherit;
+            color: $logo-color;
+            font-size: 2.4vh;
+            text-align: center;
+            line-height: 7vh;
+            width: 7vh;
+            margin-left: 3vh;
+            margin-right: 1vh;
+        }
+        h2{
+            float: left;
+            height: inherit;
+            color: $secondary-text;
+            font-size: 2vh;
+            width: calc(100% - 11vh);
+            line-height: 7vh;
+        }
+    }
+    .search{
+        float: left;
+        display: block;
+        height: 5vh;
+        width: 5vh;
+        color: $logo-color;
+        margin: 1vh;
+    }
+}
