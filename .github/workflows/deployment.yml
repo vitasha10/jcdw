@@ -48,5 +48,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           local-dir: ./build/
           server-dir: ${{ secrets.REMOTE_PATH }}
-          protocol: sftp
           port: 22
