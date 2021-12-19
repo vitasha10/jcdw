@@ -41,10 +41,11 @@ jobs:
       - name: Build 🏗️
         run: npm run build
       - name: Deploy build to vps 🚀
-        uses: wangyucode/sftp-upload-action@v1.1
+        uses: Creepios/sftp-action@v1.0.3 #wangyucode/sftp-upload-action@v1.1
         with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          remoteDir: ${{ secrets.REMOTE_PATH }}
+          host: '${{ secrets.SERVER_IP }}'
+          username: '${{ secrets.USERNAME }}'
+          password: '${{ secrets.PASSWORD }}'
+          remotePath: '${{ secrets.REMOTE_PATH }}'
+          localPath: './'
           port: 22
