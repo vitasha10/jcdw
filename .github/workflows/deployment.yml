@@ -41,10 +41,10 @@ jobs:
       - name: Build 🏗️
         run: npm run build
       - name: Deploy build to vps 🚀
-        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        uses: wangyucode/sftp-upload-action@v1.1
         with:
-          server: ${{ secrets.SERVER_IP }}
+          host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          server-dir: ${{ secrets.REMOTE_PATH }}
+          serverDir: ${{ secrets.REMOTE_PATH }}
           port: 22
