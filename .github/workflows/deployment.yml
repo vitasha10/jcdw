@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies 🔧
         run: npm i
       - name: Build 🏗️
-        run: npm run build
+        run: npm run export
       - name : container ls $GITHUB_EVENT_PATH
         with : { entrypoint : "/bin/sh" , args : '-c "ls -la $GITHUB_EVENT_PATH"' }
         uses : "docker://alpine:latest"
@@ -63,5 +63,5 @@ jobs:
           username: '${{ secrets.USERNAME }}'
           password: '${{ secrets.PASSWORD }}'
           remotePath: '${{ secrets.REMOTE_PATH }}'
-          localPath: './build/'
+          localPath: './out/'
           port: 22
