@@ -42,12 +42,11 @@ jobs:
         run: npm run build
       - name: Deploy build to vps 🚀
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
-        env:
-          FTP_SERVER: ${{ secrets.SERVER_IP }}
-          FTP_USERNAME: ${{ secrets.USERNAME }}
-          FTP_PASSWORD: ${{ secrets.PASSWORD }}
-          LOCAL_DIR: ./build/
-          SERVER_DIR: ${{ secrets.REMOTE_PATH }}
-          METHOD: sftp
-          PORT: 22
-          ARGS: --delete
+        with:
+          server: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          local-dir: ./build/
+          server-dir: ${{ secrets.REMOTE_PATH }}
+          protocol: sftp
+          port: 22
