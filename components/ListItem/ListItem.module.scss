@@ -20,8 +20,10 @@
     }
     img{
         display: block;
-        height: calc(100% - 2vh - 2vh - 9vh);
-        width: auto;//calc(100% - 2vw);
+        height: auto;
+        max-height: calc(100% - 2vh - 2vh - 9vh);
+        width: auto;
+        max-width: 100%;
         margin: 0 auto;
     }
     h4{
