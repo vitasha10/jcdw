@@ -46,6 +46,5 @@ jobs:
           server: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          local-dir: ./build/
           server-dir: ${{ secrets.REMOTE_PATH }}
           port: 22
