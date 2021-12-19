@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styles from './List.module.scss'
 import useSWR from 'swr'
 
@@ -17,9 +17,11 @@ function List(): JSX.Element {
     if (!data) return <div>loading...</div>
     return (
         <div className={styles.list}>
-            {data.map((data : ListItemType) =>
-                <ListItem data={data}/>
-            )}
+            {data.map((item : ListItemType) => (
+                <div key={item.name}>
+                    <ListItem name={item.name} picture={item.picture} description={item.description}/>
+                </div>
+            ))}
         </div>
     )
 }

@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import styles from './ListItem.module.scss'
 interface Props {
-    data: {
-        name: string,
-        picture: string,
-        description: string,
-    }
+    name: string,
+    picture: string,
+    description: string,
 }
 interface State {
     
@@ -17,12 +15,12 @@ export class ListItem extends Component<Props, State> {
     render() {
         return (
             <div className={styles.listItem}>
-                <h3>{this.props.data.name}</h3>
+                <h3>{this.props.name}</h3>
                 <img
-                    src={this.props.data.picture}
+                    src={this.props.picture}
                     alt="Picture of the code"
                 />
-                <h4>{this.props.data.description}</h4>
+                <h4>{this.props.description}</h4>
             </div>
         )
     }

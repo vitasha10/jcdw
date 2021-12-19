@@ -17,7 +17,7 @@ export class Header extends Component<Props, State> {
             <header className={style.header}>
                 <div className={style.logo}>
                     <h1>JSDW</h1>
-                    <h2>Just click, don't write!</h2>
+                    <h2>Just click, don&apos;t write!</h2>
                 </div>
                 <FontAwesomeIcon className={style.search} icon={faSearch} />
             </header>
