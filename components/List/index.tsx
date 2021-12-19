@@ -12,7 +12,7 @@ type ListItemType = {
 }
 
 function List(): JSX.Element {
-    const { data, error } = useSWR('http://data.speak-up.space/one.json', fetcher)
+    const { data, error } = useSWR('https://data.speak-up.space/one.json', fetcher)
     if (error) return <div>failed to load</div>
     if (!data) return <div>loading...</div>
     return (
