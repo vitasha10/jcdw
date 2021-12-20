@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component,audioRef } from 'react'
 import styles from './SearchWindow.module.scss'
 import { faTimes} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import AudioSpectrum from 'react-audio-spectrum'
 
 interface Props {
     onRequestClose: any,
@@ -10,14 +11,17 @@ interface Props {
 interface State {
     inputElement: any,
     inputValue: string,
+    audioElement: any,
 }
 
 export class SearchWindow extends Component<Props, State> {
+    audioRef: any
     constructor(props: Props){
         super(props);
         this.state = {
             inputValue: "",
             inputElement: React.createRef(),
+            audioElement: React.createRef(),
         }
         this.onKeyUp = this.onKeyUp.bind(this);
     }
@@ -34,7 +38,9 @@ export class SearchWindow extends Component<Props, State> {
     componentDidUpdate(){
         if(this.props.searchIsOpen){
             this.state.inputElement.current.focus()
+            this.audioRef.play();
         }
+        else{this.audioRef.pause();}
     }
     render() {
         return (
@@ -46,7 +52,28 @@ export class SearchWindow extends Component<Props, State> {
                 <div className={styles.searchResults}>
                     <h1>Поиск конечно не работает, но вы ищите:</h1><br/>
                     <b>{this.state.inputValue}</b>
+                    <audio id="audio-element"
+                     ref={(input) => {this.audioRef = input}}
+                        src="/home.mp3"
+                        controls
+                    >
+                    </audio>
                 </div>
+                <AudioSpectrum
+                        id="audio-canvas"
+                        audioId={'audio-element'}
+                        height={100}
+                        capColor={'red'}
+                        capHeight={0}
+                        meterWidth={1}
+                        meterCount={2000}
+                        meterColor={[
+                            {stop: 0, color: '#f0f'},
+                            {stop: 0.5, color: '#eb0090'},
+                            {stop: 1, color: '#eb0090'}
+                        ]}
+                        gap={0}
+                />
             </div>
         )
     }

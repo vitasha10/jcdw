@@ -43,7 +43,7 @@
     .searchResults{
         padding: 2vh;
         box-shadow: 0 14px 28px $list-item-shadow, 0 10px 10px $list-item-shadow;
-        height: calc(100% - 14vh - 6px);
+        height: calc(100% - 54vh - 6px);
         width: 90vw;
         color: $primary-color;
         display: block;
@@ -52,6 +52,17 @@
         h1{
             font-size: 2.8vh;
         }
+        audio{
+            display: none;
+        }
+    }
+    canvas{
+        display: block;
+        margin: 0vh auto;
+        height: 40vh;
+        width: 93vw;
+        transform: rotate(180deg);
+        filter: blur(10px);
     }
 }
 .noneSearchWindow{
