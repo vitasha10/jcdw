@@ -1,4 +1,4 @@
-import React, { Component,audioRef } from 'react'
+import React, { Component } from 'react'
 import styles from './SearchWindow.module.scss'
 import { faTimes} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
