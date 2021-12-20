@@ -31,7 +31,7 @@ export class Header extends Component<Props, State> {
         return (
             <header className={style.header}>
                 <div className={style.logo}>
-                    <h1>JSDW</h1>
+                    <h1>JСDW</h1>
                     <h2>Just click, don&apos;t write!</h2>
                 </div>
                 <FontAwesomeIcon className={style.search} icon={faSearch} onClick={this.openSearch}/>
