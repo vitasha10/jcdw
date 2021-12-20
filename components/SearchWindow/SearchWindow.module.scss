@@ -1,0 +1,59 @@
+.SearchWindow{
+    z-index: 50;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $background-color;
+    input{
+        display: block;
+        height: 5vh;
+        width: 60vw;
+        min-width: 200px;
+        max-width: calc(100vw - 15vh);
+        background-color: $background-color;
+        color: $primary-color;
+        border-radius: 15px;
+        margin: 1vh auto;
+        //border: solid $primary-color 3px;
+        border: none;
+        box-shadow: 0 14px 28px $list-item-shadow, 0 10px 10px $list-item-shadow;
+        outline: unset;
+        text-align: center;
+        font-size: 2.8vh;
+        text-shadow: 0 7px 14px $list-item-shadow, 0 5px 5px $list-item-shadow;
+    }
+    .close_btn{
+        height: 5vh;
+        width: 5vh;
+        margin: calc(1vh + 3px);
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: unset;
+        border: unset;
+    }
+    .close_btn_icon{
+        height: inherit;
+        width: inherit;
+        color: $primary-color;
+    }
+    .searchResults{
+        padding: 2vh;
+        box-shadow: 0 14px 28px $list-item-shadow, 0 10px 10px $list-item-shadow;
+        height: calc(100% - 14vh - 6px);
+        width: 90vw;
+        color: $primary-color;
+        display: block;
+        margin: 0 auto;
+        text-shadow: 0 14px 28px $list-item-shadow, 0 10px 10px $list-item-shadow;
+        h1{
+            font-size: 2.8vh;
+        }
+    }
+}
+.noneSearchWindow{
+    display: none;
+}

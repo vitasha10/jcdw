@@ -1,10 +1,11 @@
 .header{
     background-color: $header-color;
+    text-shadow: 0 14px 28px $list-item-shadow, 0 10px 10px $list-item-shadow;
     .logo{
         float: left;
         display: block;
         height: inherit;
-        width: calc(100% - 7vh);
+        width: calc(100% - 14vh);
         h1{
             float: left;
             height: inherit;
@@ -25,7 +26,7 @@
             line-height: 7vh;
         }
     }
-    .search{
+    .search, .bars{
         float: left;
         display: block;
         height: 5vh;

@@ -1,5 +1,5 @@
 .listItem{
-    display: block;
+    display: table-caption;
     min-height: 350px;
     min-width: 350px;
     height: calc(50% - 2vh);
@@ -17,6 +17,7 @@
         line-height: 4vh;
         padding-bottom: 1vh;
         text-align: center;
+        text-shadow: 0 14px 28px $list-item-shadow, 0 10px 10px $list-item-shadow;
     }
     img{
         display: block;
