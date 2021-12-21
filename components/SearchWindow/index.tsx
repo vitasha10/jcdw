@@ -54,7 +54,7 @@ export class SearchWindow extends Component<Props, State> {
                     <b>{this.state.inputValue}</b>
                     <audio id="audio-element"
                      ref={(input) => {this.audioRef = input}}
-                        src="/home.mp3"
+                        src="/home.mp3?ddjk"
                         controls
                     >
                     </audio>
